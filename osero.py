@@ -137,12 +137,20 @@ if __name__ == "__main__":
         canvas.create_line(100*i,0,100*i,800)
         canvas.create_line(0,100*i,800,100*i)
 
+    #UI
+    ui = tk.Canvas(root,width = 800,height = 80)
+    ui.create_oval(250,10,320,80,fill = "white")   
+    ui.create_oval(550,10,620,80,fill = "black")
+    ui.create_line(340,45,380,45,arrow="first",width=10)
+    ui.pack()
+    ui.place(x = 0,y = 0)
+
     board = ReversiBoard()
     board.show_board()
 
-#オセロの呼び出し
-canvas.bind("<Button-1>",callback)
-canvas.pack()
+    #オセロの呼び出し
+    canvas.bind("<Button-1>",callback)
+    canvas.pack()
 
-canvas.place(x = 50,y = 50)
-root.mainloop()
+    canvas.place(x = 50,y = 90)
+    root.mainloop()
